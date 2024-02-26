@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress open",
-    "cypress:runChrome": "cypress run --browser chrome --spec cypress/e2e/*js"
+    "report": "cypress run --browser chrome --spec cypress/e2e/*js"
   },
   "author": "Lilia Ruiz",
   "license": "ISC",
