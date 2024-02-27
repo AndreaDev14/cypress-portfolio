@@ -7,7 +7,7 @@ module.exports = defineConfig({	watchForFileChanges: false,
 	videosFolder: 'cypress/videos',
 	screenshotOnRunFailure: true,
 	scrollBehavior: 'center',
-  e2e: {baseUrl: 'https://opensource-demo.orangehrmlive.com',
+  e2e: {baseUrl: 'https://demoblaze.com',
   specPattern: ['**/*.test.cy.js', '**/*.api.cy.js'],
   experimentalRunAllSpecs: true,
   
