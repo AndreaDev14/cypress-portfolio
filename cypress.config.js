@@ -10,6 +10,7 @@ module.exports = defineConfig({	watchForFileChanges: false,
   e2e: {baseUrl: 'https://demoblaze.com',
   specPattern: ['**/*.test.cy.js', '**/*.api.cy.js'],
   experimentalRunAllSpecs: true,
+  chromeWebSecurity: false,
   
     setupNodeEvents(on, config) {
       // implement node event listeners here

@@ -1,0 +1,70 @@
+{
+  "validUserName": "standard_user",
+  "validPassword": "secret_sauce",
+  "testCases": [
+    {
+      "username": "locked_out_user",
+      "password": "secret_sauce",
+      "errorMessage": "Epic sadface: Sorry, this user has been locked out.",
+      "testTitle": "Validate NOT being able to log in with locked_out_user"
+    },
+    {
+      "username": "user",
+      "password": "secret_sauce",
+      "errorMessage": "Epic sadface: Username and password do not match any user in this service",
+      "testTitle": "Validate NOT being able to log in when Username field is invalid"
+    },
+    {
+      "username": "standard_user",
+      "password": "secret",
+      "errorMessage": "Epic sadface: Username and password do not match any user in this service",
+      "testTitle": "Validate NOT being able to log in when password field is invalid"
+    },
+    {
+      "username": null,
+      "password": "secret_sauce",
+      "errorMessage": "Epic sadface: Username is required",
+      "testTitle": "Validate NOT being able to log in when Username field is empty"
+    },
+    {
+      "username": "standard_user",
+      "password": null,
+      "errorMessage": "Epic sadface: Password is required",
+      "testTitle": "Validate NOT being able to log in when password field is empty"
+    },
+    {
+      "username": null,
+      "password": null,
+      "errorMessage": "Epic sadface: Username is required",
+      "testTitle": "Validate NOT being able to log in when Username and Password fields are empty"
+    }
+  ],
+
+  "endpoints": [
+    {
+      "url": "https://www.saucedemo.com/inventory.html",
+      "endpointMessage": "Epic sadface: You can only access '/inventory.html' when you are logged in.",
+      "endpointTitle": "Validate NOT being able to enter the endpoint /inventory.html without being logged in."
+    },
+    {
+      "url": "https://www.saucedemo.com/cart.html",
+      "endpointMessage": "Epic sadface: You can only access '/cart.html' when you are logged in.",
+      "endpointTitle": "Validate NOT to enter the endpoint /cart.html without being logged in."
+    },
+    {
+      "url": "https://www.saucedemo.com/checkout-step-one.html",
+      "endpointMessage": "Epic sadface: You can only access '/checkout-step-one.html' when you are logged in.",
+      "endpointTitle": "Validate NOT being able to access the endpoint /checkout-step-one.html without being logged in."
+    },
+    {
+      "url": "https://www.saucedemo.com/checkout-step-two.html",
+      "endpointMessage": "Epic sadface: You can only access '/checkout-step-two.html' when you are logged in.",
+      "endpointTitle": "Validate Unable to enter endpoint /checkout-step-two.html without being logged in"
+    },
+    {
+      "url": "https://www.saucedemo.com/checkout-complete.html",
+      "endpointMessage": "Epic sadface: You can only access '/checkout-complete.html' when you are logged in.",
+      "endpointTitle": "Validate Do not enter the endpoint /checkout-complete.html without being logged in."
+    }
+  ]
+}
