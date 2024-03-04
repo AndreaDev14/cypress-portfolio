@@ -10,10 +10,8 @@
   "author": "Lilia Ruiz",
   "license": "ISC",
   "dependencies": {
-    "cypress-mochawesome-reporter": "3.8.1",
-    "@faker-js/faker": "8.4.1"
+    "@faker-js/faker": "8.4.1",
+    "country-state-city": "^3.2.1",
+    "cypress-mochawesome-reporter": "3.8.1"
   }
- 
-   
-  
 }
