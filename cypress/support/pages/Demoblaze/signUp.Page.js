@@ -1,6 +1,3 @@
-
-import { verifyAlert, data } from "../../helper/commonPage";
-
 class Signup {
   constructor() {
     this.signupLink = () => cy.get('a[data-target="#signInModal"]');
@@ -8,38 +5,33 @@ class Signup {
     this.passwordInput = () => cy.get("input#sign-password");
     this.signUpBtn = () => cy.contains("button", "Sign up");
 
-   
   }
 
   clickSignUpLink() {
     this.signupLink().click();
   }
 
-  insertUsername() {
-    this.usernameInput().invoke('val', data.randomUsername);
+  insertUsername(username) {
+    this.usernameInput().invoke('val', username);
   
   }
 
-  insertPassword() {
-    this.passwordInput().invoke('val', data.randomPassword);
+  insertPassword(password) {
+    this.passwordInput().invoke('val', password);
 
   }
 
-  validSignUp() {
-    this.insertUsername();
-    this.insertPassword();
+  validSignUp(username, password) {
+    this.insertUsername(username);
+    this.insertPassword(password);
+    this.clickSignUpBtn();
   }
 
   clickSignUpBtn() {
-    this.signUpBtn().click();
+    this.signUpBtn().click({force: true});
   }
 
-  verifySignupSuccesfulMessageIsDisplayed(message) {
-    verifyAlert(message);
-  }
-  verifySignupInvalidMessageIsDisplayed(message) {
-    verifyAlert(message);
-  }
+
 }
 
 export const signup = new Signup();

@@ -1,13 +1,9 @@
-import { verifyAlert} from "../../helper/commonPage";
-
-
 class Login {
   constructor() {
     this.loginLink = () => cy.get('#login2')
     this.usernameInput = () => cy.get('#loginusername')
     this.passwordInput = () => cy.get('#loginpassword')
-    this.loginBtn = () => cy.contains('button', 'Log in');
-
+    this.loginBtn = () => cy.get('button[onclick="logIn()"]')
     this.loginMessage = () => cy.get('a#nameofuser');
   }
 
@@ -16,22 +12,24 @@ class Login {
   }
 
   insertUsername(username) {
-    this.usernameInput().invoke("val", username);
+    this.usernameInput().type( username, {force: true});
   }
 
   insertPassword(password) {
-    this.passwordInput().invoke("val", password);
+    this.passwordInput().type( password, {force: true});
   }
 
 
   clickLoginBtn() {
-    this.loginBtn().click()
+    this.loginBtn().click({force: true})
   }
 
- 
-  verifyLoginMessageIsDisplayed(message) {
-    verifyAlert(message)
+  validLogin(username,password) {
+    this.insertUsername(username)
+    this.insertPassword(password)
+    this.clickLoginBtn()
   }
+
 }
 
 export const login = new Login();
