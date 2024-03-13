@@ -34,7 +34,7 @@ class PlaceOrder {
     this.greenCheckMark().should("be.visible");
     this.sucessPurchaseText().should("be.visible");
   }
-clickCOnOkButton() {
+clickOkButton() {
     cy.wait(1000)
     this.confirmationButton().click();
 }

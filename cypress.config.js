@@ -23,4 +23,14 @@ module.exports = defineConfig({	watchForFileChanges: false,
      
     
   },
+  env: {
+		AdminUser: {
+			username: 'Admin',
+			password: 'admin123',
+		}, 
+    endpoints: {
+      loginPage: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',
+      viewBuzz: 'https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz'
+    }
+  }
 });

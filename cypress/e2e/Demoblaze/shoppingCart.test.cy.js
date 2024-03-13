@@ -56,7 +56,7 @@ describe("DemoBlaze | " + `${testSuites.shoppingCart}`, () => {
     );
     placeOrder.clickPurchaseButton();
     placeOrder.VerifyConfirmationMessageIsDisplayed();
-    placeOrder.clickCOnOkButton()
+    placeOrder.clickOkButton()
     placeOrder.verifyHomePageIsShown();
   });
 });
